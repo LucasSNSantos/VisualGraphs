@@ -143,7 +143,7 @@ namespace VisualGraphs.Classes
         /// <param name="source">First Vertice to be search</param>
         public void BuscaEmProfundidade(int source)
         {
-            bool[] visited = new bool[N];
+            bool[] visited = new bool[Vertices.Count];
 
             DFS_search(source, visited);
         }

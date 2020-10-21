@@ -17,6 +17,7 @@ using VisualGraphs.Classes;
 using System.Collections.ObjectModel;
 using Windows.UI.Popups;
 using System.Threading.Tasks;
+using System.Diagnostics;
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace VisualGraphs
@@ -67,7 +68,7 @@ namespace VisualGraphs
         {
             if (Graph_exist) Grafo_stats.Text = Graph.ToString();
             else Grafo_stats.Text = "Grafo ainda não existe!";
-            myConsole.UpdateConsole();
+            myConsole.Update();
         }
         
         #region ADD
@@ -268,13 +269,14 @@ namespace VisualGraphs
             myConsole.Update();
            // myConsole.Clear();
         }
-        private void ComboRem_box_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var cmbx = sender as ComboBox;
-            selected_item_name = cmbx.SelectedItem.ToString();
-        }
+
 
         #endregion
-              
+
+        private void save_btn_Click(object sender, RoutedEventArgs e)
+        {
+            //LogManager.GenerateLogFile(Graph)
+            Debug.WriteLine("txt files");
+        }
     }
 }

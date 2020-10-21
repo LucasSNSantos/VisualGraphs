@@ -17,5 +17,7 @@ namespace VisualGraphs.Classes
                 Debug.WriteLine("Diretorio criado em : {0}", pathDirectory);
             }
         }
+
+        //public static void GenerateLogFile(Grafo g)
     }
 }
