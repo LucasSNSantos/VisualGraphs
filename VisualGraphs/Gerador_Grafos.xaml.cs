@@ -16,6 +16,7 @@ using Windows.UI.Xaml.Navigation;
 using VisualGraphs.Classes;
 using System.Collections.ObjectModel;
 using Windows.UI.Popups;
+using System.Threading.Tasks;
 using System.Diagnostics;
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -67,7 +68,7 @@ namespace VisualGraphs
         {
             if (Graph_exist) Grafo_stats.Text = Graph.ToString();
             else Grafo_stats.Text = "Grafo ainda não existe!";
-            myConsole.UpdateConsole();
+            myConsole.Update();
         }
         
         #region ADD
@@ -156,7 +157,6 @@ namespace VisualGraphs
                         Graph = new Grafo(isDigraph.IsChecked.Value);
                         Graph.name = label_box.Text;
                         Graph_exist = true;
-                        graphStats.SetGrafo(Graph);
                     }
                 }
                 if (Graph_exist)
@@ -268,13 +268,34 @@ namespace VisualGraphs
             myConsole.Update();
            // myConsole.Clear();
         }
-        private void ComboRem_box_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var cmbx = sender as ComboBox;
-            selected_item_name = cmbx.SelectedItem.ToString();
-        }
+
 
         #endregion
-              
+
+        private void save_btn_Click(object sender, RoutedEventArgs e)
+        {
+          if(Graph != null)
+            {
+                Debug.WriteLine("Salvei o grafo em TXT");
+            }
+            else
+            {
+                Debug.WriteLine("Erro na hora de salvar em arquivo texto");
+            }
+        }
+
+        private void calcula_itens_btn(object sender, RoutedEventArgs e)
+        {
+            if(Graph != null)
+            {
+                Debug.WriteLine("Calculando");
+                graphStats.SetGrafo(Graph);
+                calculate_components.Content = "Recalcular";
+            }
+            else
+            {
+                Debug.WriteLine("Erro ao calcular");
+            }
+        }
     }
 }

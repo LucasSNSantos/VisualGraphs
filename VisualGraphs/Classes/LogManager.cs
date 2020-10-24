@@ -17,5 +17,11 @@ namespace VisualGraphs.Classes
                 Debug.WriteLine("Diretorio criado em : {0}", pathDirectory);
             }
         }
+
+        public static void GenerateLogFile(Grafo g)
+        {
+            //path = @"C:\Users\souza\Documents\GitHub\VisualGraphs";
+            //System.IO.File.WriteAllText(path, g.toString())
+        }
     }
 }

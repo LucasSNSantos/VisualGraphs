@@ -13,6 +13,8 @@ namespace VisualGraphs.Classes
         public bool isDigraph;
         protected bool isAciclic;
         public string name { get; set; }
+        private int M;
+        private int N;
 
         /// <summary>
         /// [Grafo Class]
@@ -145,7 +147,7 @@ namespace VisualGraphs.Classes
         /// <param name="source">First Vertice to be search</param>
         public void BuscaEmProfundidade(int source)
         {
-            bool[] visited = new bool[N];
+            bool[] visited = new bool[Vertices.Count];
 
             DFS_search(source, visited);
         }
