@@ -15,7 +15,7 @@ namespace VisualGraphs.Classes
 
         public override void Clear()
         {
-            Box.Text = "Nao ha Rede";
+            Box.Text = "Sem registros de dados";
         }
 
         public void SetGrafo(Grafo g)
@@ -41,7 +41,7 @@ namespace VisualGraphs.Classes
             }
             else
             {
-                Box.Text = "Nao ha Rede";
+                Box.Text = "Sem registros de dados";
             }
 
         }

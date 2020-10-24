@@ -18,6 +18,10 @@ namespace VisualGraphs.Classes
             }
         }
 
-        //public static void GenerateLogFile(Grafo g)
+        public static void GenerateLogFile(Grafo g)
+        {
+            //path = @"C:\Users\souza\Documents\GitHub\VisualGraphs";
+            //System.IO.File.WriteAllText(path, g.toString())
+        }
     }
 }

@@ -157,7 +157,6 @@ namespace VisualGraphs
                         Graph = new Grafo(isDigraph.IsChecked.Value);
                         Graph.name = label_box.Text;
                         Graph_exist = true;
-                        graphStats.SetGrafo(Graph);
                     }
                 }
                 if (Graph_exist)
@@ -275,8 +274,28 @@ namespace VisualGraphs
 
         private void save_btn_Click(object sender, RoutedEventArgs e)
         {
-            //LogManager.GenerateLogFile(Graph)
-            Debug.WriteLine("txt files");
+          if(Graph != null)
+            {
+                Debug.WriteLine("Salvei o grafo em TXT");
+            }
+            else
+            {
+                Debug.WriteLine("Erro na hora de salvar em arquivo texto");
+            }
+        }
+
+        private void calcula_itens_btn(object sender, RoutedEventArgs e)
+        {
+            if(Graph != null)
+            {
+                Debug.WriteLine("Calculando");
+                graphStats.SetGrafo(Graph);
+                calculate_components.Content = "Recalcular";
+            }
+            else
+            {
+                Debug.WriteLine("Erro ao calcular");
+            }
         }
     }
 }
