@@ -29,6 +29,8 @@ namespace VisualGraphs.Classes
             N = 0;
             M = 0;
         }
+
+        #region Vertices e Arestas
         /// <summary>
         /// Adds Vertice into Grafo.
         /// </summary>
@@ -104,7 +106,7 @@ namespace VisualGraphs.Classes
         {
             return Arestas.Count;
         }
-
+        #endregion
         #region Buscas
         /// <summary>
         /// Searches the vertice by id.
